@@ -106,6 +106,11 @@ def wrap_gradio_call(func, extra_outputs=None, add_stats=False):
             text_r = f"<abbr title='{toltip_r}'>R</abbr>: <span class='measurement'>{reserved_peak/1024:.2f} GB</span>"
             text_sys = f"<abbr title='{toltip_sys}'>Sys</abbr>: <span class='measurement'>{sys_peak/1024:.1f}/{sys_total/1024:g} GB</span> ({sys_pct:.1f}%)"
 
+            print(f"Active: {active_peak}")
+            print(f"Reserved: {reserved_peak}")
+            print(f"System: {sys_peak}")
+            print(f"Elapsed: {elapsed_text}")
+
             vram_html = f"<p class='vram'>{text_a}, <wbr>{text_r}, <wbr>{text_sys}</p>"
         else:
             vram_html = ''
